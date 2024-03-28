@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+<div class="container">
+    <button id="themeToggle">Переключить тему</button>
+<h1>Registration Form</h1>
+<form class = "js-form" action="/reg-data" method="post">
+    <div class="form-input" id="input-container">
+        <label for="name-input">Enter your name</label>
+        <input type="text" class="input js-input js-input-name" id="name-input" placeholder="Name" name="username" required/>
+    </div>
+    <div class="form-input">
+        <label for="password-input">Enter your password</label>
+        <input type="password" class="input js-input js-input-password" id="password-input" placeholder="Password" name="password" required/>
+    </div>
+    <div class="form-input">
+        <label>Select user type</label>
+        <select>
+            <option>Администратор</option>
+            <option>Модератор</option>
+        </select>
+    </div>
+    <input type="submit" value="Submit form" id="submit-form"/>
+</form>
+</div>
+<script>
+    document.getElementById('themeToggle').addEventListener('click', function() {
+        const currentTheme = document.body.className;
+        if (currentTheme === 'light-theme') {
+            document.body.className = 'dark-theme';
+        } else {
+            document.body.className = 'light-theme';
+        }
+    });
+</script>
+<script src="static/script.js"></script>
+</body>
+</html>
